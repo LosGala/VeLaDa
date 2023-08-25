@@ -1,0 +1,21 @@
+$$('img').forEach(img =>{
+    const src =img.src
+    const [filename] = src.split('/').reverse()
+    const [name] = filename.split('.')
+
+    const a = document.createElement('a')
+    a.setAtribute('href', src)
+    a.setAtribute('download', name)
+    a.click()
+})
+
+
+
+pc JSON ////sirve para optimizar imageenes instalando WebP Brew
+
+    "images": "for file in $(find . -name '*.png'); do cwebp -q 80 $file -o $file.webp; done;",
+
+     "build": "pnpm run images && astro build",
+
+
+     ****ejecutar Terminal...pnpm run build
